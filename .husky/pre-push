@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+command_exists () {
+  command -v "$1" >/dev/null 2>&1
+}
+
+# Windows 10, Git Bash and Yarn workaround
+if command_exists winpty && test -t 1; then
+  exec < /dev/tty
+fi
+
+# Check Eslint Rule
+# npm run lint
+
+#Format Code Prettier
+# npm run format-code
+yarn lint-staged --allow-empty

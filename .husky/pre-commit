@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+#Type Checking
+# Disabling type check since lot of error already on the codebase
+# yarn type-check 
+
+# only run lint staged
+# yarn pre-commit
+yarn lint-staged --allow-empty
+# Just make sure to run the formatting code so it will be the same accross the codebase
+# yarn format-code
