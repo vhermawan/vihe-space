@@ -1,0 +1,1 @@
+export const COLOR_GRADIENT = 'bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-200 via-violet-600 to-sky-900'
