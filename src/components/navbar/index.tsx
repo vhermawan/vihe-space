@@ -49,6 +49,11 @@ const listRoute = [
     id:5,
     path: '/journey',
     title: 'Journey'
+  },
+  {
+    id:6,
+    path: '/friends',
+    title: 'Friends'
   }
 ]
 
@@ -66,7 +71,7 @@ export default function Navbar() {
       setActiveColor(`${COLOR_GRADIENT} font-bold bg-clip-text text-transparent`)
       setCustomClass('bg-transparent text-black dark:text-white')
     }else{
-      setActiveColor('text-black font-bold')
+      setActiveColor('text-white font-bold underline')
       setCustomClass(`${COLOR_GRADIENT} text-white backdrop-filter backdrop-blur-lg duration-300`)
     }
   },[]);
@@ -113,7 +118,7 @@ export default function Navbar() {
       </div>
 
       <div id="hamburger-menu" className="block md:hidden">
-        <Dialog open={isOpen}>
+        <Dialog open={isOpen} onOpenChange={()=>setIsOpen(!isOpen)}>
           <DialogTrigger asChild>
             <motion.button
               className="mr-3 border-2 p-2 rounded-lg"
